@@ -28,4 +28,14 @@ public class Corridas  extends Controller{
 		}
 		principal();
 	}
+	
+	public static void excluir(long id) {
+		Corrida c = Corrida.findById(id);
+		c.delete();
+		principal();
+	}
+	public static void editar(long id) {
+		
+		render();
+	}
 }
