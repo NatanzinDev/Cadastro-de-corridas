@@ -1,22 +1,22 @@
 #{extends 'main.html' /} #{set title:'Cadastrar sua corrida' /}
 
 
-<form>
+<form action="@{Corridas.salvar}">
 	<div class="form-group">
 		<label for="formGroupExampleInput">Quilômetors percorridos</label> <input
 			type="text" class="form-control" id="formGroupExampleInput"
-			placeholder="Informe a distância">
+			placeholder="Informe a distância" name="c.kmpercorridos">
 	</div>
 	<div class="form-group">
 		<label for="formGroupExampleInput2">Local</label> <input type="text"
 			class="form-control" id="formGroupExampleInput2"
-			placeholder="Informe o local da corrida">
+			placeholder="Informe o local da corrida" name="c.local">
 	</div>
 	<label for="selectperiodo">Período</label> <select
-		class="form-control" id="selectperiodo">
-		<option value="manhã">Manhã</option>
-		<option value="tarde">Tarde</option>
-		<option value="noite">Noite</option>
+		class="form-control" id="selectperiodo" name="c.periodo">
+		<option value="Manhã">Manhã</option>
+		<option value="Tarde">Tarde</option>
+		<option value="Noite">Noite</option>
 	</select>
 	<button type="submit" class="btn btn-primary" id="botao">Enviar</button>
 </form>

@@ -6,7 +6,7 @@ import play.db.jpa.Model;
 
 @Entity
 public class Corrida extends Model{
-	public double kmPercorridos;
+	public double kmpercorridos;
 	public String local;
 	public String periodo;
 	
