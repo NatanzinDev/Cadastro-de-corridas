@@ -35,7 +35,7 @@ public class Corridas  extends Controller{
 		principal();
 	}
 	public static void editar(long id) {
-		
-		render();
+		Corrida c = Corrida.findById(id);
+		renderTemplate("Corridas/form.html", c); 
 	}
 }
