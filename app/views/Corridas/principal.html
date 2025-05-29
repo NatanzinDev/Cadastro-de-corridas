@@ -1,11 +1,17 @@
 #{extends 'main.html' /} #{set title:'Corridas' /}
 
 <div class="kms">
-	<h1 class="display-3">Meus Kms Percorridos</h1>
+	<h1 class="display-3">Kms Percorridos</h1>
 	<h1 class="display-4">${meutotal} KMs</h1>
 </div>
 
-
+ <div class="container">
+    <h3 class="mb-4">Pesquisar por local</h3>
+    <form class="d-flex" role="search" action="@{Corridas.principal}">
+      <input class="form-control me-2  text-white border-0" type="search" placeholder="Digite sua pesquisa" aria-label="Pesquisar" name="busca">
+      <button class="btn btn-primary" type="submit">Buscar</button>
+    </form>
+  </div>
 <table class="table table-striped table-dark">
 
     
