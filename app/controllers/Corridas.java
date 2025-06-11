@@ -12,14 +12,23 @@ public class Corridas extends Controller {
 
 	public static void principal() {
 		// recebe o valor que esta no input de pesquisa no html
+		
 		String busca = params.get("busca");
+		String tpbusca = params.get("tpbusca");
 		List<Corrida> corridas = null;
 		float meutotal = 0;
 		
+		if(tpbusca != null) {
+			tpbusca = tpbusca.toLowerCase();
+		}
+		
 
-		if (busca == null) {
+		if(tpbusca == null || busca == null) {
 			corridas = Corrida.findAll();
-		} else {
+			
+		}else if(tpbusca.equals("distância")) {
+			corridas = Corrida.find("byKmpercorridos", Double.parseDouble(busca)).fetch();
+		}else if(tpbusca.equals("local")) {
 			corridas = Corrida.find("byLocal", busca).fetch();
 		}
 
