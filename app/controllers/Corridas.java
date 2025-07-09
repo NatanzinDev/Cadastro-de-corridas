@@ -3,6 +3,7 @@ package controllers;
 import java.util.List;
 
 import models.Corrida;
+import models.Status;
 import play.mvc.Controller;
 
 public class Corridas extends Controller {
@@ -24,7 +25,8 @@ public class Corridas extends Controller {
 		
 
 		if(tpbusca == null || busca == null) {
-			corridas = Corrida.findAll();
+			// busca quando status é diferente de oculto
+			corridas = Corrida.find("status <> ?1", Status.oculto).fetch();
 			
 		}else if(tpbusca.equals("distância")) {
 			corridas = Corrida.find("byKmpercorridos", Double.parseDouble(busca)).fetch();
